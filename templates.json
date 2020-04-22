@@ -1,0 +1,11 @@
+[
+    {
+        "template": "iuri-python3",
+        "platform": "x86_64",
+        "language": "Python",
+        "source": "openfaas",
+        "description": "Classic Python 3.6 template",
+        "repo": "https://github.com/vertigobr/openfaas-templates",
+        "official": "true"
+    }
+]

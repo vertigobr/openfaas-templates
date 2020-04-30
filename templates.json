@@ -1,11 +1,29 @@
 [
     {
-        "template": "iuri-python3",
+        "template": "vtg-ipaas-python3",
         "platform": "x86_64",
         "language": "Python",
         "source": "vertigobr",
         "description": "Classic Python 3.6 template",
         "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false"
+    },
+    {
+        "template": "vtg-ipaas-java11",
+        "platform": "x86_64",
+        "language": "Java",
+        "source": "vertigobr",
+        "description": "Java 11 template",
+        "repo": "https://github.com/vertigobr/openfaas-templates",
+        "official": "false" 
+    },
+    {
+        "template": "vtg-ipaas-nodejs",
+        "platform": "x86_64",
+        "language": "NodeJS",
+        "source": "vertigobr",
+        "description": "HTTP-based Node 12 template",
+        "repo": "https://github.com/vertigobr/openfaas-templates",
+        "official": "false" 
     }
 ]

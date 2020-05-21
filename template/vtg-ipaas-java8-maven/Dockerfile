@@ -1,7 +1,23 @@
-FROM maven:3.6.0-jdk-8-alpine as builder
+#
+# PARA USAR SNAPSHOTS:
+# IGMFROM=vertigo/maven-ibmjava
+# MVNPROFILE=-Pallow-snapshots
+# PARA USAR APENAS RELEASES:
+# IGMFROM=maven:3.6.0-jdk-8-alpine
+# MVNPROFILE=
+#
+# Enquanto as dependências do vtg-ipaas-java8-maven não forem release
+# no maven central vamos deixar snapshots habilitados
+#
+ARG IMGFROM=vertigo/maven-ibmjava
+FROM $IMGFROM as builder
+# repete para reusar
+ARG IMGFROM
+ARG MVNPROFILE=-Pallow-snapshots
 COPY . /home/app/
 WORKDIR /home/app
-RUN  mvn clean package
+RUN echo "IMGFROM=$IMGFROM, MVNPROFILE=$MVNPROFILE" && \
+    mvn clean package $MVNPROFILE
 
 FROM openfaas/of-watchdog:0.7.6 as watchdog
 

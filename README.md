@@ -10,6 +10,7 @@ To use these funtions with plain `faas-cli` you can do any of these options:
 
 ```sh
 export OPENFAAS_TEMPLATE_STORE_URL="https://raw.githubusercontent.com/vertigobr/openfaas-templates/master/templates.json"
+faas-cli template store list
 faas-cli template store pull a_template_name
 ```
 

@@ -35,7 +35,9 @@ ARG artifactId=function
 ARG handlerClass=com.openfaas.function.Handler
 COPY --from=builder /home/app/target/$artifactId-0.1.0-SNAPSHOT.jar ./function.jar
 COPY --from=builder /home/app/target/lib/* ./lib/
-RUN chown -R app /home/app
+RUN chown -R app /home/app && \
+    ls -l *.jar && \
+    ls -l lib/*.jar
 USER app
 ENV upstream_url="http://127.0.0.1:8082"
 ENV mode="http"

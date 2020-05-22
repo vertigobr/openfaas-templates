@@ -1,19 +1,18 @@
 #
 # PARA USAR SNAPSHOTS:
-# IGMFROM=vertigo/maven-ibmjava
+# IMGFROM=vertigo/maven-ibmjava
 # MVNPROFILE=-Pallow-snapshots
 # PARA USAR APENAS RELEASES:
-# IGMFROM=maven:3.6.0-jdk-8-alpine
+# IMGFROM=maven:3.6.0-jdk-8-alpine
 # MVNPROFILE=
 #
-# Enquanto as dependências do vtg-ipaas-java8-maven não forem release
-# no maven central vamos deixar snapshots habilitados
+# Útil para novas versões das dependências do vtg-ipaas-java8-maven enquanto não forem RELEASE
 #
-ARG IMGFROM=vertigo/maven-ibmjava
+ARG IMGFROM=maven:3.6.0-jdk-8-alpine
 FROM $IMGFROM as builder
 # repete para reusar
 ARG IMGFROM
-ARG MVNPROFILE=-Pallow-snapshots
+ARG MVNPROFILE=
 # cache dependencies
 WORKDIR /home/app
 COPY pom.xml .

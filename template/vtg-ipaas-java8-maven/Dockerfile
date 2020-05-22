@@ -14,8 +14,11 @@ FROM $IMGFROM as builder
 # repete para reusar
 ARG IMGFROM
 ARG MVNPROFILE=-Pallow-snapshots
-COPY . /home/app/
+# cache dependencies
 WORKDIR /home/app
+COPY pom.xml .
+RUN mvn dependency:go-offline $MVNPROFILE
+COPY src .
 RUN echo "IMGFROM=$IMGFROM, MVNPROFILE=$MVNPROFILE" && \
     mvn clean package $MVNPROFILE
 

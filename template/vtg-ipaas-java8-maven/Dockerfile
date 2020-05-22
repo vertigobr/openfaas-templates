@@ -18,7 +18,7 @@ ARG MVNPROFILE=-Pallow-snapshots
 WORKDIR /home/app
 COPY pom.xml .
 RUN mvn dependency:go-offline $MVNPROFILE
-COPY src .
+COPY . .
 RUN echo "IMGFROM=$IMGFROM, MVNPROFILE=$MVNPROFILE" && \
     mvn clean package $MVNPROFILE
 

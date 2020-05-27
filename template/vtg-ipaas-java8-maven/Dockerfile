@@ -15,9 +15,9 @@ ARG IMGFROM
 ARG MVNPROFILE=
 # cache dependencies
 WORKDIR /home/app
-COPY pom.xml .
+COPY ./function/pom.xml .
 RUN mvn dependency:go-offline $MVNPROFILE
-COPY . .
+COPY ./function/ .
 RUN echo "IMGFROM=$IMGFROM, MVNPROFILE=$MVNPROFILE" && \
     mvn clean package $MVNPROFILE
 

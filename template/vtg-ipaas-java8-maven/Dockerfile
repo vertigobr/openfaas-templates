@@ -41,8 +41,10 @@ RUN chown -R app /home/app && \
     ls -l *.jar && \
     ls -l lib/*.jar
 USER app
+
 ENV upstream_url="http://127.0.0.1:8082"
 ENV mode="http"
+ENV executor="multi"
 ENV fprocess="java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -jar function.jar $handlerClass"
 EXPOSE 8080
 

@@ -9,15 +9,6 @@
         "official": "false"
     },
     {
-        "template": "vtg-ipaas-java11",
-        "platform": "x86_64",
-        "language": "Java",
-        "source": "vertigobr",
-        "description": "Java 11 template",
-        "repo": "https://github.com/vertigobr/openfaas-templates",
-        "official": "false" 
-    },
-    {
         "template": "vtg-ipaas-java11-maven",
         "platform": "x86_64",
         "language": "Java",

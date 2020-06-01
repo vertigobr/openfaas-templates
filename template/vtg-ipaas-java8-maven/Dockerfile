@@ -12,6 +12,7 @@ ARG IMGFROM=maven:3.6.0-jdk-8-alpine
 FROM $IMGFROM as builder
 # repete para reusar
 ARG IMGFROM
+# outros build args
 ARG MVNPROFILE=
 # cache dependencies
 WORKDIR /home/app
@@ -33,8 +34,12 @@ RUN addgroup --system app \
     && chmod +x /usr/bin/fwatchdog
 
 WORKDIR /home/app
+ARG MODE="http"
+ARG EXECUTOR="multi"
+ARG FPROCESS="java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -jar function.jar com.openfaas.function.Handler"
+ARG UPSTREAM_URL="http://127.0.0.1:8082"
 ARG artifactId=function
-ARG handlerClass=com.openfaas.function.Handler
+#ARG handlerClass=com.openfaas.function.Handler
 COPY --from=builder /home/app/target/$artifactId-0.1.0-SNAPSHOT.jar ./function.jar
 COPY --from=builder /home/app/target/lib/* ./lib/
 RUN chown -R app /home/app && \
@@ -42,10 +47,10 @@ RUN chown -R app /home/app && \
     ls -l lib/*.jar
 USER app
 
-ENV upstream_url="http://127.0.0.1:8082"
-ENV mode="http"
-ENV executor="multi"
-ENV fprocess="java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -jar function.jar $handlerClass"
+ENV upstream_url="$UPSTREAM_URL"
+ENV mode="$MODE"
+ENV executor="$EXECUTOR"
+ENV fprocess="$FPROCESS"
 EXPOSE 8080
 
 HEALTHCHECK --interval=2s CMD [ -e /tmp/.lock ] || exit 1

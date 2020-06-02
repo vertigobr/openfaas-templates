@@ -1,8 +1,19 @@
 # openfaas-templates
 
-OpenFaas function templates for Vertigo iPaaS
+OpenFaas function templates for Vertigo iPaaS.
 
-This is the default repo for Vertigo iPaaS command-line utility (safira).
+This is the default repo for Vertigo iPaaS command-line utility (safira):
+
+```sh
+safira template list
+
+NAME                   SOURCE    DESCRIPTION
+vtg-ipaas-python3      vertigobr Classic Python 3.6 template
+vtg-ipaas-java11-maven vertigobr Java 11 Maven template
+vtg-ipaas-java8-maven  vertigobr Java 8 Maven template
+vtg-ipaas-node12       vertigobr HTTP-based Node 12 template
+...
+```
 
 To use these funtions with plain `faas-cli` you can do any of these options:
 

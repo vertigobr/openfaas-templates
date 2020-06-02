@@ -22,7 +22,16 @@
         "platform": "x86_64",
         "language": "Java",
         "source": "vertigobr",
-        "description": "Java 8 Maven template",
+        "description": "Java 8 Maven http template",
+        "repo": "https://github.com/vertigobr/openfaas-templates",
+        "official": "false" 
+    },
+    {
+        "template": "vtg-ipaas-java8-maven-raw",
+        "platform": "x86_64",
+        "language": "Java",
+        "source": "vertigobr",
+        "description": "Java 8 Maven raw template",
         "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false" 
     },

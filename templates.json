@@ -50,7 +50,7 @@
         "language": "NodeJS",
         "source": "vertigobr",
         "description": "nodered template",
-        "repo": "https://github.com/vertigobr/nodered-fn",
+        "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false" 
     }
 ]

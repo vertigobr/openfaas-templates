@@ -1,0 +1,3 @@
+[submodule "template/nodered"]
+	path = template/nodered
+	url = git@github.com:vertigobr/nodered-fn.git

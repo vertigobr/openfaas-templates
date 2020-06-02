@@ -43,5 +43,14 @@
         "description": "HTTP-based Node 12 template",
         "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false" 
+    },
+    {
+        "template": "nodered",
+        "platform": "x86_64",
+        "language": "NodeJS",
+        "source": "vertigobr",
+        "description": "nodered template",
+        "repo": "https://github.com/vertigobr/nodered-fn",
+        "official": "false" 
     }
 ]

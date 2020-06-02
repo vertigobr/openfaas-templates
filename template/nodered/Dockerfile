@@ -9,7 +9,7 @@ RUN chown app /data
 
 WORKDIR /data
 USER app
-COPY . .
+COPY function/ .
 RUN yarn install
 #RUN yarn start
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"

@@ -1,0 +1,16 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red": "1.0.6",
+        "node-red-node-mysql": "~0.1.0",
+        "pm2": "^4.4.0"
+    },
+    "scripts": {
+        "start": "node node_modules/node-red/red.js -u /data flows.json",
+        "test": "node node_modules/node-red/red.js -u $(pwd) flows.json",
+	"svc": "node node_modules/pm2/bin/pm2 start 'yarn start'"
+    }
+}

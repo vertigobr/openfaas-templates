@@ -1,7 +1,7 @@
 FROM node:alpine
 
 RUN mkdir -p /data
-RUN apk install curl
+RUN apk add curl
 
 # Add non root user
 RUN addgroup -S app && adduser app -S -G app

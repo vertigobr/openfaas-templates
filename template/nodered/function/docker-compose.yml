@@ -2,7 +2,7 @@ version: '3.3'
 services:
   node-red:
     environment:
-      - FLOWS=flows.json
+      - FLOWS=flow.json
     ports:
       - '8080:8080'
     image: 'nodered/node-red:latest-minimal'

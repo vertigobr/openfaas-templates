@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  node-red:
+    environment:
+      - NODE_RED_ENABLE_PROJECTS=true
+    ports:
+      - '8080:8080'
+    image: 'nodered/node-red:latest-minimal'
+    volumes:
+      - './:/data'
+    user: root:root

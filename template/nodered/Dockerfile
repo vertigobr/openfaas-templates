@@ -1,4 +1,5 @@
 FROM nodered/node-red:latest-minimal
+USER root
 WORKDIR /data
 COPY function/ .
 RUN yarn install

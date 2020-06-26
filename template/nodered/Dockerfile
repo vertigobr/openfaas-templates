@@ -1,5 +1,4 @@
 FROM nodered/node-red:latest-minimal
-RUN apk add curl
 WORKDIR /data
 COPY function/ .
 RUN yarn install

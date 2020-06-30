@@ -5,7 +5,12 @@ services:
       - FLOWS=flow.json
     ports:
       - '8080:8080'
-    image: 'nodered/node-red:latest-minimal'
+    image: 'nodered/node-red:latest-12'
     volumes:
       - './:/data'
     user: root:root
+    working_dir: /data
+    entrypoint:
+    - sh
+    - -c
+    - "npm install && npm start --cache /data/.npm"

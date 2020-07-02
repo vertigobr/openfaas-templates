@@ -1,0 +1,117 @@
+[
+    {
+        "id":"83c24c2e.07461",
+        "type":"tab",
+        "label":"Flow 1",
+        "disabled":false,
+        "info":""
+    },
+    {
+        "id":"42082ea7.17241",
+        "type":"http in",
+        "z":"83c24c2e.07461",
+        "name":"",
+        "url":"/_/health",
+        "method":"get",
+        "upload":false,
+        "swaggerDoc":"",
+        "x":170,
+        "y":140,
+        "wires":[
+            [
+                "d13af203.d756c"
+            ]
+        ]
+    },
+    {
+        "id":"d13af203.d756c",
+        "type":"http response",
+        "z":"83c24c2e.07461",
+        "name":"200",
+        "statusCode":"",
+        "headers":{
+
+        },
+        "x":390,
+        "y":140,
+        "wires":[
+
+        ]
+    },
+    {
+        "id":"f0f1bc69.e8ed5",
+        "type":"http in",
+        "z":"83c24c2e.07461",
+        "name":"",
+        "url":"/hello",
+        "method":"get",
+        "upload":false,
+        "swaggerDoc":"",
+        "x":160,
+        "y":220,
+        "wires":[
+            [
+                "d38e66ce.96fd68"
+            ]
+        ]
+    },
+    {
+        "id":"6ff877c7.405738",
+        "type":"http response",
+        "z":"83c24c2e.07461",
+        "name":"",
+        "statusCode":"200",
+        "headers":{
+
+        },
+        "x":550,
+        "y":220,
+        "wires":[
+
+        ]
+    },
+    {
+        "id":"d38e66ce.96fd68",
+        "type":"change",
+        "z":"83c24c2e.07461",
+        "name":"",
+        "rules":[
+            {
+                "t":"set",
+                "p":"payload",
+                "pt":"msg",
+                "to":"Hello World!",
+                "tot":"str"
+            }
+        ],
+        "action":"",
+        "property":"",
+        "from":"",
+        "to":"",
+        "reg":false,
+        "x":350,
+        "y":220,
+        "wires":[
+            [
+                "6ff877c7.405738",
+                "beffa11e.cb00b"
+            ]
+        ]
+    },
+    {
+        "id":"beffa11e.cb00b",
+        "type":"debug",
+        "z":"83c24c2e.07461",
+        "name":"",
+        "active":true,
+        "tosidebar":true,
+        "console":false,
+        "tostatus":false,
+        "complete":"false",
+        "x":350,
+        "y":280,
+        "wires":[
+
+        ]
+    }
+]

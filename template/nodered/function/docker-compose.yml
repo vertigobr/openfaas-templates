@@ -3,7 +3,7 @@ services:
   node-red:
     ports:
       - '8080:8080'
-    image: 'nodered/node-red:latest-12'
+    image: 'nodered/node-red:latest-12-minimal'
     volumes:
       - './:/data'
     user: root:root

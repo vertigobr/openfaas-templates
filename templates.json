@@ -1,6 +1,6 @@
 [
     {
-        "template": "vtg-ipaas-python3",
+        "template": "python3",
         "platform": "x86_64",
         "language": "Python",
         "source": "vertigobr",
@@ -9,7 +9,7 @@
         "official": "false"
     },
     {
-        "template": "vtg-ipaas-java11-maven",
+        "template": "java11-maven",
         "platform": "x86_64",
         "language": "Java",
         "source": "vertigobr",
@@ -18,16 +18,16 @@
         "official": "false" 
     },
     {
-        "template": "vtg-ipaas-java8-maven",
+        "template": "java8-maven",
         "platform": "x86_64",
         "language": "Java",
         "source": "vertigobr",
-        "description": "Java 8 Maven http template",
+        "description": "Java 8 Maven template",
         "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false" 
     },
     {
-        "template": "vtg-ipaas-java8-maven-raw",
+        "template": "java8-maven-raw",
         "platform": "x86_64",
         "language": "Java",
         "source": "vertigobr",
@@ -36,7 +36,7 @@
         "official": "false" 
     },
     {
-        "template": "vtg-ipaas-node12",
+        "template": "node12",
         "platform": "x86_64",
         "language": "NodeJS",
         "source": "vertigobr",
@@ -49,7 +49,7 @@
         "platform": "x86_64",
         "language": "NodeJS",
         "source": "vertigobr",
-        "description": "nodered template",
+        "description": "Nodered template",
         "repo": "https://github.com/vertigobr/openfaas-templates",
         "official": "false" 
     }

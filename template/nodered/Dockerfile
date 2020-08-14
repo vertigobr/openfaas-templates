@@ -17,4 +17,4 @@ COPY function/flow.json /data/flow.json
 ENV DISABLE_EDITOR=true
 
 HEALTHCHECK --interval=3s CMD ["curl","http://localhost:8080/_/health"]
-EXPOSE 1880
+EXPOSE 8080

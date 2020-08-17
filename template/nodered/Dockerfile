@@ -15,6 +15,7 @@ COPY function/flow.json /data/flow.json
 
 # Disabled Nodered editor
 ENV DISABLE_EDITOR=true
+ENV PORT=8080
 
 HEALTHCHECK --interval=3s CMD ["curl","http://localhost:8080/_/health"]
 EXPOSE 8080

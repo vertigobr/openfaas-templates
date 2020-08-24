@@ -1,4 +1,6 @@
 FROM nodered/node-red:latest-12-minimal
+ARG DISABLE_EDITOR=true
+ARG SETTINGS=settings.js
 
 # Copy package.json to the WORKDIR so npm builds all
 # of your added nodes modules for Node-RED
@@ -9,12 +11,12 @@ RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 # NOTE: This will only work if you DO NOT later mount /data as an external volume.
 #       If you need to use an external volume for persistence then
 #       copy your settings and flows files to that volume instead.
-COPY function/settings.js /data/settings.js
+COPY function/${SETTINGS} /data/settings.js
 COPY function/flow_cred.json /data/flow_cred.json
 COPY function/flow.json /data/flow.json
 
 # Disabled Nodered editor
-ENV DISABLE_EDITOR=true
+ENV DISABLE_EDITOR=${DISABLE_EDITOR}
 ENV PORT=8080
 
 HEALTHCHECK --interval=3s CMD ["curl","http://localhost:8080/_/health"]
